@@ -38,3 +38,29 @@ void Dealership::addOldCar(string vin, string make, string model, int year, floa
 	oldCar* carpntr = new oldCar(vin, make, model, year, price, category, mileage);
 	oldCars.push_back(carpntr);
 }
+
+void Dealership::sellNewCar(string vin)
+{
+	for (int i = 0; i < newCars.size(); i++)
+	{
+		if (newCars[i]->getVin() == vin)
+		{
+			newCar* carpntr = newCars[i];
+			newCars.erase(newCars.begin() + i);
+			delete carpntr;
+		}
+	}
+}
+
+void Dealership::sellOldCar(string vin)
+{
+	for (int i = 0; i < oldCars.size(); i++)
+	{
+		if (oldCars[i]->getVin() == vin)
+		{
+			oldCar* carpntr = oldCars[i];
+			oldCars.erase(oldCars.begin() + i);
+			delete carpntr;
+		}
+	}
+}

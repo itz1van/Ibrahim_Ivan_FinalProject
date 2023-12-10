@@ -26,5 +26,15 @@ int main()
 
 
     D.showCatalog();
+
+    cout << endl << "after selling both old and new mercs" << endl << endl;
+
+    D.sellNewCar("100000");
+    D.sellOldCar("100000");
+    D.sellNewCar("200000");
+    D.sellOldCar("200000");
+
+
+    D.showCatalog();
 }
 
