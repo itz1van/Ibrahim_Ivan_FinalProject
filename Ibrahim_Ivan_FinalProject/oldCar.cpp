@@ -14,6 +14,14 @@ oldCar::oldCar()
 {
 
 	cout << "error no parameters" << endl;
+	cout << "error no parameters passed" << endl;
+	this->vin = "000000";
+	this->make = "make";
+	this->model = "model";
+	this->year = 1000;
+	this->price = 1000;
+	this->category = "category";
+	setMileage(100);
 }
 
 oldCar::oldCar(string vin, string make, string model, int year, float price, string category, int mileage):Car(vin,make,model,year,price,category)

@@ -63,6 +63,12 @@ string Car::getCategory()
 Car::Car()
 {
 	cout << "error no parameters passed" << endl;
+	this->vin = "000000";
+	this->make = "make";
+	this->model = "model";
+	this->year = 1000;
+	this->price = 1000;
+	this->category = "category";
 }
 
 Car::Car(string vin, string make, string model, int year, float price, string category)

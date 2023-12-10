@@ -22,7 +22,8 @@ void Dealership::showCatalog()
 			<< newCars[i]->getModel() << " "
 			<< "PRICE: " << newCars[i]->getPrice() << endl
 
-			);
+		);
+
 	}
 
 }
