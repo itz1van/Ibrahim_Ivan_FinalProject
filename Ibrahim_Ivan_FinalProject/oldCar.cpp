@@ -12,6 +12,7 @@ int oldCar::getMileage()
 
 oldCar::oldCar()
 {
+
 	cout << "error no parameters" << endl;
 }
 

@@ -16,7 +16,7 @@ newCar::newCar()
 }
 
 
-newCar::newCar(string v, string m, string mo, int y, float p, string c, string w):Car(v,m,mo,y,p,c)
+newCar::newCar(string vin, string make, string model, int year, float price, string category, string warrenty):Car(vin,make,model,year,price,category)
 {
-	warrentyProvider = w;
+	warrentyProvider = warrenty;
 }
