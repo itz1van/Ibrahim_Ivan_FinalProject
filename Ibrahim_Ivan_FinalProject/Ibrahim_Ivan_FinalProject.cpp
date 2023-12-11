@@ -8,7 +8,7 @@ int main()
 {
     Dealership D;
 
-    D.addNewCar("1FTRF14505NC06477", "merc", "C-Class", 2023, 60000, "Sudan", "AAA");
+    D.addNewCar("5TBRT3415YS036660", "merc", "C-Class", 2023, 60000, "Sudan", "AAA");
     D.addNewCar("2C4RC1CG3CR270878", "Nissan", "GTR", 2023, 300000, "Sudan", "Progressive");
     D.addNewCar("1GCCS14E188220070", "Honda", "Civic", 2023, 41000, "Sudan", "Geico");
     D.addNewCar("1FTSW2BY7AEB26799", "Toyota", "Camry", 2023, 35000, "Sudan", "Nationwide");
@@ -22,86 +22,141 @@ int main()
     D.addOldCar("19UYA42463A006621", "Doge", "Charger", 2017, 9000, "Sudan", 50000);
     D.addOldCar("1FM5K7F88EGB89626", "Chevy", "Equinox", 2023, 6, "SUV", 500000);
 
-    int answer, searchAnswer = 0, a = 0;
-    string make, model, category, vin, addCarAnswer;
+    int answer, searchAnswer = 0, a = 0, year = 0, price = 0, mileage = 0;
+    string make, model, category, vin, addCarAnswer, warrenty;
 
     do
     {
         D.menu();
         cout << "\nEnter your choice: ";
-        std::cin >> answer;
+        cin >> answer;
         while (answer < 0 || answer > 4)
         {
             cout << "Incorrect Input please pick a correct number: ";
-            std::cin >> answer;
+            cin >> answer;
 
         }
         switch (answer)
         {
         case 1:
-            cout << "1. Search by Make"
+            cout << "\n1. Search by Make"
                 << "\n2. Search by Model"
                 << "\n3. Search by Category"
                 << "\n4. Show all new Cars"
-                << "\n5. Show all old Cars";
-            std::cin >> searchAnswer;
+                << "\n5. Show all old Cars"
+                << "\n6. Show Entire Catalog"
+                << "\nEnter your choice: ";
+            cin >> searchAnswer;
 
             while (searchAnswer < 0 || searchAnswer > 5)
             {
                 cout << "Incorrect Input please pick a correct number: ";
-                std::cin >> searchAnswer;
+                cin >> searchAnswer;
 
             }
 
             if (searchAnswer == 1)
             {
                 cout << "Enter Make of Cars (case sensitive): ";
-                std::cin >> make;
+                cin >> make;
                 D.searchCatalogByMake(make);
             }
             else if (searchAnswer == 2)
             {
                 cout << "Enter model of Cars (case sensitive): ";
-                std::cin >> model;
+                cin >> model;
                 D.searchCatalogByModel(model);
             }
             else if (searchAnswer == 3)
             {
                 cout << "Enter Category of Cars (case sensitive): ";
-                std::cin >> category;
+                cin >> category;
                 D.searchCatalogByCategory(category);
             }
-            else if (searchAnswer == 5)
+            else if (searchAnswer == 4)
             {
                 D.showCatalog('n');
             }
-            else
+            else if (searchAnswer == 5)
             {
                 D.showCatalog('o');
             }
+            else
+            {
+                D.showCatalog();
+            }
+
+            break;
 
         case 2:
             cout << "Please type in the EXACT vin number (case sensitive): ";
-            std::cin >> vin;
+            cin >> vin;
 
             a = D.oldOrNew(vin);
             if (a == 1)
             {
-                D.sellNewCar(vin);
+                D.sellOldCar(vin);
             }
             else if (a == 2)
             {
-                D.sellOldCar(vin);
+                D.sellNewCar(vin);
             }
             else
             {
                 cout << "No cars with that vin in our inventory" << endl;
             }
 
+            break;
+
         case 3:
             cout << "New or old car (N/O): ";
-            std::cin >> addCarAnswer;
+            cin >> addCarAnswer;
 
+            while (addCarAnswer != "N" && addCarAnswer != "O")
+            {
+                cout << "Incorrect input (N/O) only: ";
+                cin >> addCarAnswer;
+            }
+
+            if (addCarAnswer == "N")
+            {
+                cout << "Enter Vin: ";
+                cin >> vin;
+                cout << "Enter Make: ";
+                cin >> make;
+                cout << "Enter Model: ";
+                cin >> model;
+                cout << "Enter year: ";
+                cin >> year;
+                cout << "Enter price: ";
+                cin >> price;
+                cout << "Enter Category: ";
+                cin >> category;
+                cout << "Enter warrenty: ";
+                cin >> warrenty;
+                D.addNewCar(vin, make, model, year, price, category, warrenty);
+
+            }
+            else
+            {
+                cout << "Enter Vin: ";
+                cin >> vin;
+                cout << "Enter Make: ";
+                cin >> make;
+                cout << "Enter Model: ";
+                cin >> model;
+                cout << "Enter year: ";
+                cin >> year;
+                cout << "Enter price: ";
+                cin >> price;
+                cout << "Enter Category: ";
+                cin >> category;
+                cout << "Enter mileage: ";
+                cin >> mileage;
+                D.addOldCar(vin, make, model, year, price, category, mileage);
+            }
+
+            break;
 
         default:
             break;
