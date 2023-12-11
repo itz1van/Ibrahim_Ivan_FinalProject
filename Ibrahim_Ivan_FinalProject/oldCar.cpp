@@ -2,6 +2,11 @@
 
 void oldCar::setMileage(int m)
 {
+	while (m < 0)
+	{
+		cout << "ERROR: Wrong input\nPlease Type in correct mileage: ";
+		cin >> m;
+	}
 	mileage = m;
 }
 
