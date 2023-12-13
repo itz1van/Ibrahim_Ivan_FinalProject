@@ -22,7 +22,7 @@ int main()
     D.addOldCar("19UYA42463A006621", "Doge", "Charger", 2017, 9000, "Sudan", 50000);
     D.addOldCar("1FM5K7F88EGB89626", "Chevy", "Equinox", 2023, 6, "SUV", 500000);
 
-    int answer, searchAnswer = 0, a = 0, year = 0, price = 0, mileage = 0;
+    int answer, searchAnswer = 0, a = 0, year = 0, price = 0, mileage = 0, max = 0, min = 0;
     string make, model, category, vin, addCarAnswer, warrenty;
 
     do
@@ -45,10 +45,12 @@ int main()
                 << "\n4. Show all new Cars"
                 << "\n5. Show all old Cars"
                 << "\n6. Show Entire Catalog"
+                << "\n7. Search by range(max)"
+                << "\n8. Search by range(max/min)"
                 << "\nEnter your choice: ";
             cin >> searchAnswer;
 
-            while (searchAnswer < 0 || searchAnswer > 5)
+            while (searchAnswer < 0 || searchAnswer > 8)
             {
                 cout << "Incorrect Input please pick a correct number: ";
                 cin >> searchAnswer;
@@ -81,9 +83,24 @@ int main()
             {
                 D.showCatalog('o');
             }
-            else
+            else if (searchAnswer == 6)
             {
                 D.showCatalog();
+            }
+            else if (searchAnswer == 7)
+            {
+                cout << "Enter max price for car: ";
+                cin >> max;
+                D.searchCatalogByRange(max);
+
+            }
+            else
+            {
+                cout << "Enter max price for car: ";
+                cin >> max;
+                cout << "Enter min price for car: ";
+                cin >> min;
+                D.searchCatalogByRange(max, min);
             }
 
             break;

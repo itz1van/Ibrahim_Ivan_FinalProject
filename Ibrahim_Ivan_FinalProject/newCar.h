@@ -10,5 +10,7 @@ public:
 	string getWarrentyProvider();
 	newCar();
 	newCar(string vin, string make, string model, int year, float price, string category, string warrenty);
+
+	void setYear(int a);
 };
 

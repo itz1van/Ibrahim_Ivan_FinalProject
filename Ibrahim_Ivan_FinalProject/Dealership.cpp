@@ -36,7 +36,7 @@ void Dealership::showCatalog()
 	}
 	if (oldCars.size() == 0 && newCars.size() == 0)
 	{
-		cout << "No items in inventory" << endl;
+		cout << "No items in inventory" << endl << endl;
 	}
 
 }
@@ -52,7 +52,7 @@ void Dealership::showCatalog(const char a)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 				);
 		}
@@ -66,7 +66,7 @@ void Dealership::showCatalog(const char a)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 			);
 
@@ -74,7 +74,7 @@ void Dealership::showCatalog(const char a)
 	}
 	if (oldCars.size() == 0 && newCars.size() == 0)
 	{
-		cout << "No items in inventory" << endl;
+		cout << "No items in inventory" << endl << endl;
 	}
 }
 
@@ -133,7 +133,7 @@ void Dealership::sellNewCar(string vin)
 	}
 	if (!found)
 	{
-		cout << "No Cars with that vin was found" << endl;
+		cout << "No Cars with that vin was found" << endl << endl;
 	}
 }
 
@@ -152,7 +152,7 @@ void Dealership::sellOldCar(string vin)
 	}
 	if (!found)
 	{
-		cout << "NO Cars with that vin was found" << endl;
+		cout << "NO Cars with that vin was found" << endl << endl;
 	}
 }
 
@@ -168,7 +168,7 @@ void Dealership::searchCatalogByMake(string make)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 			);
 			count++;
@@ -183,7 +183,7 @@ void Dealership::searchCatalogByMake(string make)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 			);
 			count++;
@@ -192,7 +192,7 @@ void Dealership::searchCatalogByMake(string make)
 
 	if (count == 0)
 	{
-		cout << "No " << make << " cars were found" << endl;
+		cout << "No " << make << " cars were found" << endl << endl;
 	}
 }
 
@@ -208,7 +208,7 @@ void Dealership::searchCatalogByModel(string model)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 			);
 			count++;
@@ -223,7 +223,7 @@ void Dealership::searchCatalogByModel(string model)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 			);
 			count++;
@@ -231,7 +231,7 @@ void Dealership::searchCatalogByModel(string model)
 	}
 	if (count == 0)
 	{
-		cout << "No " << model << "'s were found" << endl;
+		cout << "No " << model << "'s were found" << endl << endl;
 	}
 }
 
@@ -247,7 +247,7 @@ void Dealership::searchCatalogByCategory(string Category)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 			);
 			count++;
@@ -262,7 +262,7 @@ void Dealership::searchCatalogByCategory(string Category)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 			);
 			count++;
@@ -270,7 +270,7 @@ void Dealership::searchCatalogByCategory(string Category)
 	}
 	if (count == 0)
 	{
-		cout << "There are no " << Category << "'s in our inventory" << endl;
+		cout << "There are no " << Category << "'s in our inventory" << endl << endl;
 	}
 }
 
@@ -286,7 +286,7 @@ void Dealership::searchCatalogByRange(int max)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 				);
 			count++;
@@ -301,7 +301,7 @@ void Dealership::searchCatalogByRange(int max)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 				);
 			count++;
@@ -309,7 +309,7 @@ void Dealership::searchCatalogByRange(int max)
 	}
 	if (count == 0)
 	{
-		cout << "There are no Cars available under $" << max << endl;
+		cout << "There are no Cars available under $" << max << endl << endl;
 	}
 }
 
@@ -325,7 +325,7 @@ void Dealership::searchCatalogByRange(int max, int min)
 				<< oldCars[i]->getMake() << " "
 				<< oldCars[i]->getModel() << " "
 				<< "MILEAGE: " << oldCars[i]->getMileage() << " "
-				<< "PRICE: " << oldCars[i]->getPrice() << endl
+				<< "PRICE: " << oldCars[i]->getPrice() << endl << endl
 
 				);
 			count++;
@@ -340,7 +340,7 @@ void Dealership::searchCatalogByRange(int max, int min)
 				<< newCars[i]->getMake() << " "
 				<< newCars[i]->getModel() << " "
 				<< "PRICE: " << newCars[i]->getPrice() << " "
-				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl
+				<< "Warrenty: " << newCars[i]->getWarrentyProvider() << endl << endl
 
 				);
 			count++;
